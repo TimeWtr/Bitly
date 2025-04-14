@@ -1,3 +1,4 @@
 [submodule "generator"]
 	path = generator
 	url = git@github.com:TimeWtr/generator.git
+	branch=master
