@@ -2,3 +2,7 @@
 	path = generator
 	url = git@github.com:TimeWtr/generator.git
 	branch=master
+[submodule "redirector"]
+	path = redirector
+	url = git@github.com:TimeWtr/redirector.git
+	branch=master
