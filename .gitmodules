@@ -1,8 +1,12 @@
 [submodule "generator"]
 	path = generator
 	url = git@github.com:TimeWtr/generator.git
-	branch=master
+	branch = master
 [submodule "redirector"]
 	path = redirector
 	url = git@github.com:TimeWtr/redirector.git
-	branch=master
+	branch = master
+[submodule "analytics"]
+	path = analytics
+	url = git@github.com:TimeWtr/analytics.git
+	branch = master
