@@ -10,3 +10,7 @@
 	path = analytics
 	url = git@github.com:TimeWtr/analytics.git
 	branch = master
+[submodule "local_message_table"]
+	path = local_message_table
+	url = git@github.com:TimeWtr/local_message_table.git
+	branch = master
