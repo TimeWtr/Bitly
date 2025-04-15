@@ -26,31 +26,31 @@ type Logger interface {
 }
 
 type ZapLogger struct {
-	l zap.SugaredLogger
+	l *zap.Logger
 }
 
-func NewZapLogger(l zap.SugaredLogger) Logger {
+func NewZapLogger(l *zap.Logger) Logger {
 	return &ZapLogger{l: l}
 }
 
 func (z *ZapLogger) Debugf(s string, fields ...Field) {
-	z.l.Debugf(s, z.transfer(fields...))
+	z.l.Debug(s, z.transfer(fields...)...)
 }
 
 func (z *ZapLogger) Infof(s string, fields ...Field) {
-	z.l.Infof(s, z.transfer(fields...))
+	z.l.Info(s, z.transfer(fields...)...)
 }
 
 func (z *ZapLogger) Warnf(s string, fields ...Field) {
-	z.l.Warnf(s, z.transfer(fields...))
+	z.l.Warn(s, z.transfer(fields...)...)
 }
 
 func (z *ZapLogger) Errorf(s string, fields ...Field) {
-	z.l.Errorf(s, z.transfer(fields...))
+	z.l.Error(s, z.transfer(fields...)...)
 }
 
 func (z *ZapLogger) transfer(fields ...Field) []zap.Field {
-	res := make([]zap.Field, len(fields))
+	res := make([]zap.Field, 0, len(fields))
 	for _, field := range fields {
 		res = append(res, zap.Any(field.Key, field.Val))
 	}
